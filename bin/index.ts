@@ -33,7 +33,7 @@ function progress(state: string) {
         // @ts-ignore
         document.querySelector("#listfrm").contentDocument.body.querySelector("#link_User_4_1").click();
         // @ts-ignore
-        // setTimeout(() => document.querySelector("#contentfrm").contentDocument.body.querySelector("button").click(), 1000);
+        setTimeout(() => document.querySelector("#contentfrm").contentDocument.body.querySelector("button").click(), 1000);
     });
     await new Promise((resolve) => setTimeout(resolve, 2000));
 
