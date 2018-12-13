@@ -1,0 +1,24 @@
+{
+  "name": "routerreboot",
+  "version": "1.0.0",
+  "description": "Reboot my old router when it's playing up",
+  "main": "bin/index.js",
+  "bin": {
+    "rr": "bin/index.js"
+  },
+  "scripts": {
+    "compile": "./node_modules/typescript/bin/tsc",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "ScriptSmith",
+  "license": "ISC",
+  "dependencies": {
+    "@types/ansi-escapes": "^3.0.0",
+    "@types/puppeteer": "^1.11.1",
+    "ansi-escapes": "^3.1.0",
+    "chalk": "^2.4.1",
+    "heart-ping": "^1.0.6",
+    "puppeteer": "^1.11.0",
+    "typescript": "^3.2.2"
+  }
+}
