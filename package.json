@@ -2,16 +2,16 @@
   "name": "routerreboot",
   "version": "1.0.0",
   "description": "Reboot my old router when it's playing up",
-  "main": "bin/index.js",
+  "main": "index.js",
   "bin": {
-    "rr": "bin/index.js"
+    "rr": "bin/rr"
   },
   "scripts": {
-    "compile": "./node_modules/typescript/bin/tsc",
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "build": "tsc",
+    "prepare": "tsc"
   },
   "author": "ScriptSmith",
-  "license": "ISC",
+  "license": "MIT",
   "dependencies": {
     "@types/ansi-escapes": "^3.0.0",
     "@types/puppeteer": "^1.11.1",
@@ -20,5 +20,9 @@
     "heart-ping": "^1.0.6",
     "puppeteer": "^1.11.0",
     "typescript": "^3.2.2"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git@github.com:ScriptSmith/routerreboot.git"
   }
 }

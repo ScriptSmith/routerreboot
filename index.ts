@@ -1,5 +1,3 @@
-#!/usr/bin/env node
-
 import {launch} from "puppeteer";
 import HeartPing from 'heart-ping'
 import chalk from "chalk";
