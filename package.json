@@ -1,6 +1,6 @@
 {
   "name": "routerreboot",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "description": "Reboot my old router when it's playing up",
   "main": "index.js",
   "bin": {

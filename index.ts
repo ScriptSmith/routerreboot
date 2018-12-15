@@ -47,13 +47,13 @@ function progress(state: string) {
     ping.setOnTimeout(updatePings);
     await new Promise((resolve) => {
         ping.start("http://example.com", 80, () => {
-            progress("Finished");
-            process.stdout.write('\n');
-            process.stdout.destroy();
-            ping.stop();
             resolve();
         }, updatePings)
     });
+    progress("Finished");
+    process.stdout.write('\n');
+    ping.stop();
+
 
     function updatePings() {
         progress(`Waiting ${++pings}`);
