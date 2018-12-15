@@ -10,6 +10,7 @@ From repository
 ```
 git clone https://github.com/ScriptSmith/routerreboot.git
 cd routerreboot
+npm install
 sudo npm install -g
 ```
 
