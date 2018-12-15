@@ -7,15 +7,23 @@ function progress(state: string) {
     process.stdout.write(`\r${chalk.bgYellow.black(` ${state} `)}${ansiEscapes.eraseEndLine}`)
 }
 
+async function sleep(seconds: number) {
+    await new Promise((resolve) => {
+        setTimeout(resolve, seconds * 1000);
+    })
+}
+
 
 (async () => {
     progress("Launching");
-    const browser = await launch({headless: true, slowMo: 100});
+    const browser = await launch({headless: true});
     const page = await browser.newPage();
     page.on("dialog", (dialog) => dialog.accept());
 
     progress("Visiting page");
     await page.goto("http://192.168.1.1", {waitUntil: "networkidle0"});
+
+    await sleep(2);
 
     progress("Logging in");
     await page.keyboard.type("admin");
@@ -24,7 +32,7 @@ function progress(state: string) {
     await page.keyboard.press("Enter");
 
     progress("Clicking button");
-    await new Promise((resolve) => setTimeout(resolve, 2000));
+    await sleep(5);
     await page.evaluate(() => {
         // @ts-ignore
         document.querySelector("#listfrm").contentDocument.body.querySelector("#link_User_4").click();
@@ -33,7 +41,7 @@ function progress(state: string) {
         // @ts-ignore
         setTimeout(() => document.querySelector("#contentfrm").contentDocument.body.querySelector("button").click(), 1000);
     });
-    await new Promise((resolve) => setTimeout(resolve, 2000));
+    await sleep(2);
 
     progress("Closing");
     await page.close();
